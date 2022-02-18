@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import { client } from "../libs/client";
 import { worksType } from "../types/worksType";
 
@@ -17,6 +18,7 @@ const Home: NextPage<Props> = (props) => {
 			</Head>
 
 			<main>
+				<Link href="/whenuseswr">useSWRでのフェッチ</Link>
 				<p>制作一覧</p>
 				{props.works.map((work) => (
 					<div key={work.id}>
@@ -24,7 +26,7 @@ const Home: NextPage<Props> = (props) => {
 						<p>{work.desc}</p>
 						<p>使用技術</p>
 						{work.technologies.map((tech) => (
-							<ul key={tech}>
+							<ul key={tech + work.id}>
 								<li>{tech}</li>
 							</ul>
 						))}
