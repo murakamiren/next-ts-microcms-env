@@ -16,8 +16,6 @@ const Post: NextPage<postProps> = (props) => {
 	const router = useRouter();
 	const { pid } = router.query;
 
-	console.log(props);
-
 	return (
 		<div>
 			<h1>今のパス: {pid}</h1>
