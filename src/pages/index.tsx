@@ -22,7 +22,7 @@ const Home: NextPage<Props> = (props) => {
 				<p>制作一覧</p>
 				{props.works.map((work) => (
 					<div key={work.id}>
-						<Link href={"post/" + work.name} passHref>
+						<Link href={"/post/" + work.id} passHref>
 							<h2>{work.name}</h2>
 						</Link>
 						<p>{work.desc}</p>

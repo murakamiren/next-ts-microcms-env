@@ -40,7 +40,7 @@ export const getStaticPaths: GetStaticPaths<PathParams> = async () => {
 
 	const paths = posts.map((post) => ({
 		params: {
-			pid: post.name,
+			pid: post.id,
 		},
 	}));
 	return { paths, fallback: false };
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps<postProps, PathParams> = async (cont
 
 	const posts: worksType[] = data.contents;
 
-	const finalPost = posts.filter((d) => d.name === pid);
+	const finalPost = posts.filter((d) => d.id === pid);
 	const work = finalPost[0];
 
 	return {
